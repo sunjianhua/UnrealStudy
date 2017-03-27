@@ -22,4 +22,10 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats)
 	FString Name;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Unit)
+	TSubclassOf<UObject> UClassOfPlayer;
+
+	UPROPERTY(EditAnywhere, meta = (MetaClass = "GameMode"), Category = Unit)
+	FStringClassReference UClassGameMode;
 };
