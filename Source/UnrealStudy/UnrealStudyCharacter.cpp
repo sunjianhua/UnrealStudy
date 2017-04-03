@@ -31,5 +31,10 @@ void AUnrealStudyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	PlayerInputComponent->BindAction("F_Test", IE_Pressed, this, &AUnrealStudyCharacter::FTest);
 }
 
+void AUnrealStudyCharacter::FTest()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("Hello World, this is FPSGameMode!"));
+}
