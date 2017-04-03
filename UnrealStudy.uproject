@@ -1,13 +1,17 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{02642379-4477-8F5C-304C-EB8C8421415B}",
+	"EngineAssociation": "{E002A2F5-48A5-5F0A-98C8-DBA4243DAE27}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
 		{
 			"Name": "UnrealStudy",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"CoreUObject",
+				"Engine"
+			]
 		}
 	]
 }
