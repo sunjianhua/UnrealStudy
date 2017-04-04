@@ -12,6 +12,9 @@ UCLASS()
 class UNREALSTUDY_API AUnrealStudyPlayerController : public APlayerController
 {
 	GENERATED_BODY()
+
+public:
+	AUnrealStudyPlayerController();
 	
 protected:
 	virtual void BeginPlay() override;

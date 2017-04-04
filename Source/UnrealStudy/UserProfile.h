@@ -3,7 +3,20 @@
 #pragma once
 
 #include "UObject/NoExportTypes.h"
+#include "ColoredTexture.h"
 #include "UserProfile.generated.h"
+
+/**
+*
+*/
+
+UENUM()
+enum Status
+{
+	Stopped UMETA(DisplayName = "Stopped"),
+	Moving UMETA(DisplayName = "Moving"),
+	Attacking UMETA(DisplayName = "Attacking"),
+};
 
 /**
  * 
@@ -13,6 +26,9 @@ class UNREALSTUDY_API UUserProfile : public UObject
 {
 	GENERATED_BODY()
 	
+public:
+	UUserProfile();
+	~UUserProfile();
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats)
 	float Armor;
@@ -28,4 +44,10 @@ public:
 
 	UPROPERTY(EditAnywhere, meta = (MetaClass = "GameMode"), Category = Unit)
 	FStringClassReference UClassGameMode;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = HUD)
+	FColoredTexture Texture;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Status)
+	TEnumAsByte<Status> status;
 };

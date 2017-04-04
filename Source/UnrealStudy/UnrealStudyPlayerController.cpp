@@ -2,6 +2,11 @@
 
 #include "UnrealStudy.h"
 #include "UnrealStudyPlayerController.h"
+#include "UnrealStudyGameModeBase.h"
+
+AUnrealStudyPlayerController::AUnrealStudyPlayerController()
+{
+}
 
 void AUnrealStudyPlayerController::BeginPlay()
 {
@@ -18,5 +23,13 @@ void AUnrealStudyPlayerController::SetupInputComponent()
 
 void AUnrealStudyPlayerController::FTest()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("Hello World, this is AUnrealStudyPlayerController!"));
+	/** UObject 测试：创建销毁 */
+	AUnrealStudyGameModeBase *gm = Cast<AUnrealStudyGameModeBase>(GetWorld()->GetAuthGameMode());
+	if (!gm)
+		return;
+
+	UUserProfile* Profile = ConstructObject<UUserProfile>(gm->UPBlueprintClassName);
+	Profile->BeginDestroy();
+
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("测试创建和销毁"));
 }
