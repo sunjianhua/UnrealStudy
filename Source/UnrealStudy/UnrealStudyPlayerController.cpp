@@ -28,8 +28,9 @@ void AUnrealStudyPlayerController::FTest()
 	if (!gm)
 		return;
 
-	UUserProfile* Profile = ConstructObject<UUserProfile>(gm->UPBlueprintClassName);
-	Profile->BeginDestroy();
+	//UUserProfile* Profile = ConstructObject<UUserProfile>(gm->UPBlueprintClassName);
+	UUserProfile* Profile = NewObject<UUserProfile>(GetTransientPackage(), UUserProfile::StaticClass());
+	Profile->ConditionalBeginDestroy();
 
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("测试创建和销毁"));
 }
