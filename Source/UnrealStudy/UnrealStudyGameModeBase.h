@@ -15,6 +15,8 @@ class UNREALSTUDY_API AUnrealStudyGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 
 public:
+	virtual void StartPlay() override;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = UClassNames)
 	TSubclassOf<UUserProfile> UPBlueprintClassName;
 };
