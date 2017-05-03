@@ -19,4 +19,11 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = UClassNames)
 	TSubclassOf<UUserProfile> UPBlueprintClassName;
+
+public:
+	/** DELEGATE ≤‚ ‘ */
+	DECLARE_DELEGATE(FNoParamDELEGATE)
+	FNoParamDELEGATE NoParamDELEGATE;
+
+	void OutString();
 };
